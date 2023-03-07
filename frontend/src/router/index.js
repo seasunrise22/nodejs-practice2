@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import Board from "../views/Board.vue";
-// import Board_Create from "../views/Board-Create.vue";
+import Board_PostList from "@/views/Board/PostList.vue";
+import Board_Create from "@/views/Board/Create.vue";
 // import Board_Update from "../views/Board_Update.vue";
 
 const routes = [
@@ -11,17 +11,15 @@ const routes = [
     component: Home,
   },
   {
-    path: "/board/:page?",
-    name: "board",
-    component: Board,
-    // props: true,
-    // props: (route) => ({ page: route.params.page || "1" }),
+    path: "/board/postlist",
+    name: "Board_PostList",
+    component: Board_PostList,
   },
-  // {
-  //   path: "/board_create",
-  //   name: "board_create",
-  //   component: Board_Create,
-  // },
+  {
+    path: "/board/create",
+    name: "Board_Create",
+    component: Board_Create,
+  },
   // {
   //   path: "/board_update",
   //   name: "board_update",
