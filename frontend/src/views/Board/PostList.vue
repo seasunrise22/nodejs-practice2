@@ -33,7 +33,7 @@ import { useRoute } from "vue-router";
 export default {
   setup() {
     const route = useRoute();
-    const posts = ref([]);
+    const posts = ref([]); // reactive reference
 
     onMounted(() => {
       // const page = route.params.page || 1;

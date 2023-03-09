@@ -1,41 +1,62 @@
 <template lang="">
-  <form style="width: 1024px; margin: 10px auto">
+  <!-- @ = v-on -->
+  <form @submit.prevent="submitForm" style="width: 1024px; margin: 10px auto">
     <div class="form-group-author" style="display: inline-block">
       <input
+        v-model="post.author"
         type="text"
         class="form-control"
-        id="exampleFormControlInput1"
         placeholder="작성자"
       />
     </div>
     <div class="form-group-password" style="display: inline-block">
       <input
+        v-model="post.password"
         type="password"
         class="form-control"
-        id="exampleFormControlInput1"
         placeholder="비밀번호"
       />
     </div>
     <div class="form-group">
       <input
+        v-model="post.title"
         type="text"
         class="form-control"
-        id="exampleFormControlInput1"
         placeholder="제목"
       />
     </div>
     <div class="form-group">
       <textarea
+        v-model="post.content"
         class="form-control"
-        id="exampleFormControlTextarea1"
         rows="10"
         placeholder="내용"
       ></textarea>
     </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      style="float: right; margin-right: 10px"
+    >
+      Submit
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger"
+      style="float: right; margin-right: 10px"
+    >
+      <router-link
+        to="/board/postlist"
+        style="text-decoration: none; color: white"
+        >Cancel</router-link
+      >
+    </button>
   </form>
 </template>
 <script>
-export default {};
+export default {
+  props: ["post", "submitForm"],
+};
 </script>
 <style>
 .form-control {

@@ -4,14 +4,16 @@ import board from "../db/board.js";
 
 const router = express.Router();
 
-router.get("/:page?", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const perPage = 4;
-    const page = req.params.page || 1;
-    const allPosts = await board
-      .find()
-      .skip(perPage * page - perPage)
-      .limit(perPage);
+    // const perPage = 4;
+    // const page = req.params.page || 1;
+    // const allPosts = await board
+    //   .find()
+    //   .skip(perPage * page - perPage)
+    //   .limit(perPage);
+    // res.json(allPosts);
+    const allPosts = await board.find();
     res.json(allPosts);
   } catch (error) {
     console.log(error);

@@ -3,10 +3,12 @@ import cors from "cors";
 import mongoose, { mongo } from "mongoose";
 import dotenv from "dotenv";
 import router from "./router/router.js";
+import bodyParser from "body-parser";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 dotenv.config();
 
