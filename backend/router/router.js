@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
+    const page = req.query.page || 1
+    console.log(page)
     // const perPage = 4;
     // const page = req.params.page || 1;
     // const allPosts = await board
@@ -55,6 +57,16 @@ router.put("/:id", async (req, res) => {
     console.log(error);
   }
 });
+
+// 데이터 전체 삭제
+router.delete("/all", async (req, res) => {
+  try {
+    await board.deleteMany({})
+    res.json({ message: "All Post Deleted" });
+  } catch (error) {
+    console.log(error)
+  }
+})
 
 router.delete("/:id", async (req, res) => {
   try {

@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <!-- @ = v-on -->
   <form @submit.prevent="submitForm" style="width: 1024px; margin: 10px auto">
     <div class="form-group-author" style="display: inline-block">

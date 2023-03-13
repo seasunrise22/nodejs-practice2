@@ -26,7 +26,7 @@ export default {
       const response = await fetch(API_URL, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
-          "content-type": "application/jsons",
+          "content-type": "application/json",
         },
         body: JSON.stringify({
           author: post.author,
